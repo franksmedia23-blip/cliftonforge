@@ -29,11 +29,11 @@
     }
     .reveal.is-visible{opacity:1;transform:translateY(0)}
 
-    /* Hero overlay (subtle, modern) */
+    /* Hero overlay (use #080808 instead of pure black) */
     .hero::before{
       content:"";
       position:absolute;inset:0;
-      background:linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.35) 45%, rgba(0,0,0,.55) 100%);
+      background:linear-gradient(180deg, rgba(8,8,8,.55) 0%, rgba(8,8,8,.35) 45%, rgba(8,8,8,.55) 100%);
       pointer-events:none;
     }
 
@@ -62,7 +62,8 @@
             line: "#E5E7EB",
             muted: "#6B7280",
             paper: "#F7F7F7",
-            accent: "#3B82F6"
+            accent: "#3B82F6",
+            blackish: "#080808"
           }
         }
       }
@@ -72,17 +73,17 @@
 
 <body class="bg-white text-ink antialiased">
 
-  <!-- HEADER (dark bar, logo left, nav center, phone + CTA right) -->
-  <header class="fixed top-0 inset-x-0 z-50 bg-black">
+  <!-- HEADER (#080808, bigger logo) -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-blackish">
     <div class="max-w-7xl mx-auto px-4">
       <div class="h-[88px] flex items-center justify-between gap-6">
 
-        <!-- Brand (UPDATED LOGO) -->
+        <!-- Brand (NEW LOGO + bigger, safe sizing) -->
         <a href="#" class="flex items-center gap-4">
           <img
-            src="https://image2url.com/r2/default/images/1769802498646-95db7f8e-d128-4f96-9c7d-4a9600199b36.png"
+            src="https://image2url.com/r2/default/images/1769803763201-25247623-0179-469e-8242-e9a3214b5fe0.png"
             alt="Clifton Forge"
-            class="h-25 w-auto"
+            class="h-16 sm:h-18 md:h-20 w-auto object-contain"
             loading="eager"
           />
         </a>
@@ -114,8 +115,8 @@
       </div>
     </div>
 
-    <!-- Mobile menu -->
-    <div id="mobileMenu" class="lg:hidden hidden border-t border-white/10 bg-black">
+    <!-- Mobile menu (#080808) -->
+    <div id="mobileMenu" class="lg:hidden hidden border-t border-white/10 bg-blackish">
       <div class="max-w-7xl mx-auto px-4 py-4">
         <nav class="flex flex-col gap-3 text-white/85 text-sm">
           <a class="py-2 hover:text-white" href="#about" data-close>About</a>
@@ -132,7 +133,7 @@
 
   <main class="pt-header">
 
-    <!-- HERO (uses requested image) -->
+    <!-- HERO -->
     <section
       class="relative hero min-h-[78vh] flex items-center bg-cover bg-center"
       style="background-image:url('https://www.hollyparkmills.co.uk/app/uploads/2017/08/home-fabric-house-block@2x-1-500x310.jpg')"
@@ -161,7 +162,7 @@
       </div>
     </section>
 
-    <!-- ABOUT (remove suite wording -> "units") -->
+    <!-- ABOUT -->
     <section id="about" class="py-20">
       <div class="max-w-7xl mx-auto px-4">
         <div class="grid lg:grid-cols-2 gap-10 items-center">
@@ -195,7 +196,6 @@
 
           <div class="reveal">
             <div class="sq border border-line overflow-hidden bg-paper">
-              <!-- more industrial/commercial stock photo -->
               <img src="https://images.unsplash.com/photo-1541976844346-f18aeac57b06?auto=format&fit=crop&w=1600&q=80" alt="Industrial workspace" class="w-full h-[420px] object-cover">
             </div>
           </div>
@@ -203,7 +203,7 @@
       </div>
     </section>
 
-    <!-- SPACES (match screenshot card style + industrial images) -->
+    <!-- SPACES -->
     <section id="spaces" class="py-20 bg-paper">
       <div class="max-w-7xl mx-auto px-4">
         <div class="text-center reveal">
@@ -215,7 +215,6 @@
         </div>
 
         <div class="mt-12 grid md:grid-cols-3 gap-8">
-          <!-- Card 1 -->
           <article class="sq bg-white border border-line lift reveal">
             <div class="aspect-[16/10] overflow-hidden">
               <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1600&q=80" alt="Unit A" class="w-full h-full object-cover">
@@ -232,7 +231,6 @@
             </div>
           </article>
 
-          <!-- Card 2 -->
           <article class="sq bg-white border border-line lift reveal">
             <div class="aspect-[16/10] overflow-hidden">
               <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80" alt="Unit B" class="w-full h-full object-cover">
@@ -249,7 +247,6 @@
             </div>
           </article>
 
-          <!-- Card 3 -->
           <article class="sq bg-white border border-line lift reveal">
             <div class="aspect-[16/10] overflow-hidden">
               <img src="https://images.unsplash.com/photo-1505798577917-a65157d3320a?auto=format&fit=crop&w=1600&q=80" alt="Unit C" class="w-full h-full object-cover">
@@ -309,8 +306,8 @@
       </div>
     </section>
 
-    <!-- CTA -->
-    <section id="contact" class="py-20 bg-black text-white">
+    <!-- CTA (#080808) -->
+    <section id="contact" class="py-20 bg-blackish text-white">
       <div class="max-w-4xl mx-auto text-center px-4 reveal">
         <h2 class="text-3xl md:text-5xl font-semibold tracking-tight">
           Flexible units in a distinctive industrial setting
@@ -331,16 +328,15 @@
       </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-black text-white border-t border-white/10">
+    <!-- FOOTER (#080808 + bigger, appropriate logo) -->
+    <footer class="bg-blackish text-white border-t border-white/10">
       <div class="max-w-7xl mx-auto px-4 py-12">
         <div class="grid md:grid-cols-3 gap-10">
           <div class="reveal">
-            <!-- UPDATED LOGO IN FOOTER -->
             <img
-              src="https://image2url.com/r2/default/images/1769802498646-95db7f8e-d128-4f96-9c7d-4a9600199b36.png"
+              src="https://image2url.com/r2/default/images/1769803763201-25247623-0179-469e-8242-e9a3214b5fe0.png"
               alt="Clifton Forge"
-              class="h-24 w-auto"
+              class="h-16 sm:h-18 w-auto object-contain"
               loading="lazy"
             />
             <p class="mt-4 text-white/65 text-sm leading-relaxed">
@@ -419,7 +415,7 @@
       }
     });
 
-    // Fade-in on scroll (REQUIRED)
+    // Fade-in on scroll
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(entry=>{
         if(entry.isIntersecting){
