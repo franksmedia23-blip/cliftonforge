@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clifton Forge | Workspace to Let</title>
+
+  <!-- Font (modern + clean) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Feather Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+  <style>
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,"Noto Sans"}
+
+    /* Minimal reveal (fade + slight rise) */
+    .reveal{
+      opacity:0;
+      transform:translateY(14px);
+      transition:opacity .7s ease,transform .7s ease;
+      will-change:opacity,transform
+    }
+    .reveal.is-visible{opacity:1;transform:translateY(0)}
+
+    /* Hero overlay (subtle, modern) */
+    .hero::before{
+      content:"";
+      position:absolute;inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.35) 45%, rgba(0,0,0,.55) 100%);
+      pointer-events:none;
+    }
+
+    /* Card hover (very subtle) */
+    .lift{transition:transform .22s ease, box-shadow .22s ease}
+    @media (hover:hover) and (pointer:fine){
+      .lift:hover{transform:translateY(-4px); box-shadow:0 18px 30px rgba(0,0,0,.12)}
+    }
+
+    /* Square system */
+    .sq{border-radius:0!important}
+
+    /* Small divider line like screenshot */
+    .mini-line{height:2px;width:42px;background:#e5e7eb;margin:10px auto 0}
+
+    /* Header height helper */
+    .pt-header{padding-top:88px}
+  </style>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: "#0B1220",
+            line: "#E5E7EB",
+            muted: "#6B7280",
+            paper: "#F7F7F7",
+            accent: "#3B82F6"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-white text-ink antialiased">
+
+  <!-- HEADER (dark bar, logo left, nav center, phone + CTA right) -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-black">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="h-[88px] flex items-center justify-between gap-6">
+
+        <!-- Brand (logo on black bg) -->
+        <a href="#" class="flex items-center gap-4">
+          <img
+            src="https://image2url.com/r2/default/images/1769773184396-94ec051c-efbf-4aaf-90ff-34e293bd9b37.png"
+            alt="Clifton Forge"
+            class="h-12 w-auto"
+            loading="eager"
+          />
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden lg:flex items-center gap-8 text-xs tracking-[0.18em] uppercase text-white/85">
+          <a class="hover:text-white transition" href="#about">About</a>
+          <a class="hover:text-white transition" href="#spaces">Spaces to Let</a>
+          <a class="hover:text-white transition" href="#location">Location</a>
+          <a class="hover:text-white transition" href="#contact">Contact</a>
+        </nav>
+
+        <!-- Right -->
+        <div class="flex items-center gap-3">
+          <a href="tel:+441132570861" class="hidden md:inline-flex items-center gap-2 text-white/90 text-sm">
+            <i data-feather="phone" class="w-4 h-4"></i>
+            <span class="font-medium">Call</span>
+          </a>
+
+          <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-5 py-3 sq border border-white/25 text-white text-xs tracking-[0.18em] uppercase hover:bg-white/10 transition">
+            Enquire Now
+          </a>
+
+          <!-- Mobile menu button -->
+          <button id="menuBtn" class="lg:hidden w-11 h-11 border border-white/25 flex items-center justify-center sq" aria-label="Open menu" aria-expanded="false">
+            <i data-feather="menu" class="w-5 h-5 text-white"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="lg:hidden hidden border-t border-white/10 bg-black">
+      <div class="max-w-7xl mx-auto px-4 py-4">
+        <nav class="flex flex-col gap-3 text-white/85 text-sm">
+          <a class="py-2 hover:text-white" href="#about" data-close>About</a>
+          <a class="py-2 hover:text-white" href="#spaces" data-close>Spaces to Let</a>
+          <a class="py-2 hover:text-white" href="#location" data-close>Location</a>
+          <a class="py-2 hover:text-white" href="#contact" data-close>Contact</a>
+          <a class="mt-2 inline-flex items-center justify-center px-5 py-3 sq border border-white/25 text-white text-xs tracking-[0.18em] uppercase hover:bg-white/10 transition" href="#contact" data-close>
+            Enquire Now
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-header">
+
+    <!-- HERO (uses requested image) -->
+    <section
+      class="relative hero min-h-[78vh] flex items-center bg-cover bg-center"
+      style="background-image:url('https://www.hollyparkmills.co.uk/app/uploads/2017/08/home-fabric-house-block@2x-1-500x310.jpg')"
+    >
+      <div class="relative z-10 w-full">
+        <div class="max-w-4xl mx-auto px-4 text-center text-white">
+          <p class="text-xs tracking-[0.22em] uppercase text-white/70 reveal">Knottingley • West Yorkshire</p>
+
+          <h1 class="mt-4 text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight leading-[1.06] reveal">
+            Industrial workspace with character — built for modern teams
+          </h1>
+
+          <p class="mt-5 text-white/75 max-w-2xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed reveal">
+            Flexible units for office, light industrial and studio use — a practical, distinctive setting with straightforward access.
+          </p>
+
+          <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 reveal">
+            <a href="#spaces" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 sq bg-accent text-white font-semibold text-sm tracking-[0.14em] uppercase hover:opacity-95 transition">
+              View Spaces
+            </a>
+            <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 sq border border-white/35 text-white font-semibold text-sm tracking-[0.14em] uppercase hover:bg-white/10 transition">
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT (remove suite wording -> "units") -->
+    <section id="about" class="py-20">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div class="reveal">
+            <p class="text-xs tracking-[0.22em] uppercase text-muted">About</p>
+            <h2 class="mt-3 text-3xl md:text-4xl font-semibold tracking-tight">
+              Clifton Forge, Knottingley
+            </h2>
+            <p class="mt-5 text-muted leading-relaxed">
+              A distinctive industrial setting updated for today’s occupiers — with flexible units, shared facilities and practical access.
+            </p>
+            <p class="mt-4 text-muted leading-relaxed">
+              Suitable for growing businesses, established operators and makers looking for straightforward space with presence.
+            </p>
+
+            <div class="mt-8 grid sm:grid-cols-3 gap-3">
+              <div class="sq border border-line p-4">
+                <p class="text-xs uppercase tracking-[0.18em] text-muted">Flexible</p>
+                <p class="mt-1 font-semibold">Units & floors</p>
+              </div>
+              <div class="sq border border-line p-4">
+                <p class="text-xs uppercase tracking-[0.18em] text-muted">Practical</p>
+                <p class="mt-1 font-semibold">Parking & access</p>
+              </div>
+              <div class="sq border border-line p-4">
+                <p class="text-xs uppercase tracking-[0.18em] text-muted">Industrial</p>
+                <p class="mt-1 font-semibold">Work-ready</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <div class="sq border border-line overflow-hidden bg-paper">
+              <!-- more industrial/commercial stock photo -->
+              <img src="https://images.unsplash.com/photo-1541976844346-f18aeac57b06?auto=format&fit=crop&w=1600&q=80" alt="Industrial workspace" class="w-full h-[420px] object-cover">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPACES (match screenshot card style + industrial images) -->
+    <section id="spaces" class="py-20 bg-paper">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center reveal">
+          <p class="text-xs tracking-[0.22em] uppercase text-muted">Spaces to Let</p>
+          <h2 class="mt-3 text-3xl md:text-4xl font-semibold tracking-tight">Available units</h2>
+          <p class="mt-4 text-muted max-w-2xl mx-auto">
+            A selection of flexible units — enquire for current availability and options.
+          </p>
+        </div>
+
+        <div class="mt-12 grid md:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <article class="sq bg-white border border-line lift reveal">
+            <div class="aspect-[16/10] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1600&q=80" alt="Unit A" class="w-full h-full object-cover">
+            </div>
+            <div class="p-10 text-center">
+              <p class="text-muted text-lg">Flexible unit over multiple areas</p>
+              <div class="mini-line"></div>
+              <h3 class="mt-8 text-3xl font-medium tracking-tight">Unit A</h3>
+              <div class="mt-8">
+                <a href="#contact" class="inline-flex items-center justify-center px-10 py-4 sq bg-accent text-white font-semibold text-xs tracking-[0.18em] uppercase hover:opacity-95 transition">
+                  View More
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="sq bg-white border border-line lift reveal">
+            <div class="aspect-[16/10] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80" alt="Unit B" class="w-full h-full object-cover">
+            </div>
+            <div class="p-10 text-center">
+              <p class="text-muted text-lg">Larger floorplate options available</p>
+              <div class="mini-line"></div>
+              <h3 class="mt-8 text-3xl font-medium tracking-tight">Unit B</h3>
+              <div class="mt-8">
+                <a href="#contact" class="inline-flex items-center justify-center px-10 py-4 sq bg-accent text-white font-semibold text-xs tracking-[0.18em] uppercase hover:opacity-95 transition">
+                  View More
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="sq bg-white border border-line lift reveal">
+            <div class="aspect-[16/10] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1505798577917-a65157d3320a?auto=format&fit=crop&w=1600&q=80" alt="Unit C" class="w-full h-full object-cover">
+            </div>
+            <div class="p-10 text-center">
+              <p class="text-muted text-lg">Well-proportioned work-ready unit</p>
+              <div class="mini-line"></div>
+              <h3 class="mt-8 text-3xl font-medium tracking-tight">Unit C</h3>
+              <div class="mt-8">
+                <a href="#contact" class="inline-flex items-center justify-center px-10 py-4 sq bg-accent text-white font-semibold text-xs tracking-[0.18em] uppercase hover:opacity-95 transition">
+                  Learn More
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section id="location" class="py-20">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div class="reveal">
+            <p class="text-xs tracking-[0.22em] uppercase text-muted">Location</p>
+            <h2 class="mt-3 text-3xl md:text-4xl font-semibold tracking-tight">
+              Accessible. Practical. Well connected.
+            </h2>
+            <p class="mt-5 text-muted leading-relaxed">
+              Clifton Forge sits in Knottingley with straightforward local connections and an easy commute for teams and visitors.
+            </p>
+
+            <div class="mt-8 grid sm:grid-cols-2 gap-4">
+              <div class="sq border border-line p-5">
+                <div class="flex items-center gap-3">
+                  <i data-feather="map-pin" class="w-5 h-5"></i>
+                  <p class="font-semibold">Knottingley</p>
+                </div>
+                <p class="mt-2 text-sm text-muted">West Yorkshire</p>
+              </div>
+              <div class="sq border border-line p-5">
+                <div class="flex items-center gap-3">
+                  <i data-feather="truck" class="w-5 h-5"></i>
+                  <p class="font-semibold">Loading / access</p>
+                </div>
+                <p class="mt-2 text-sm text-muted">Work-ready logistics</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <div class="sq border border-line overflow-hidden bg-paper">
+              <img src="https://images.unsplash.com/photo-1528323273322-d81458248d40?auto=format&fit=crop&w=1600&q=80" alt="Industrial access road" class="w-full h-[420px] object-cover">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="contact" class="py-20 bg-black text-white">
+      <div class="max-w-4xl mx-auto text-center px-4 reveal">
+        <h2 class="text-3xl md:text-5xl font-semibold tracking-tight">
+          Flexible units in a distinctive industrial setting
+        </h2>
+        <p class="mt-6 text-white/70 text-base md:text-lg leading-relaxed">
+          Enquire for current availability, pricing and viewing appointments.
+        </p>
+
+        <div class="mt-10">
+          <a href="mailto:enquiries@example.com" class="inline-flex items-center justify-center px-10 py-4 sq bg-accent text-white font-semibold text-xs tracking-[0.18em] uppercase hover:opacity-95 transition">
+            Make Enquiry <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+          </a>
+        </div>
+
+        <p class="mt-6 text-white/55 text-sm">
+          Or call: <a class="text-white underline underline-offset-4" href="tel:+441132570861">0113 257 0861</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-white border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-4 py-12">
+        <div class="grid md:grid-cols-3 gap-10">
+          <div class="reveal">
+            <img
+              src="https://image2url.com/r2/default/images/1769773184396-94ec051c-efbf-4aaf-90ff-34e293bd9b37.png"
+              alt="Clifton Forge"
+              class="h-12 w-auto"
+              loading="lazy"
+            />
+            <p class="mt-4 text-white/65 text-sm leading-relaxed">
+              Flexible units for office, light industrial and studio use in Knottingley.
+            </p>
+          </div>
+
+          <div class="reveal">
+            <p class="text-xs tracking-[0.22em] uppercase text-white/60">Explore</p>
+            <ul class="mt-4 space-y-2 text-sm text-white/75">
+              <li><a class="hover:text-white transition" href="#about">About</a></li>
+              <li><a class="hover:text-white transition" href="#spaces">Spaces to Let</a></li>
+              <li><a class="hover:text-white transition" href="#location">Location</a></li>
+              <li><a class="hover:text-white transition" href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="reveal">
+            <p class="text-xs tracking-[0.22em] uppercase text-white/60">Contact</p>
+            <div class="mt-4 space-y-2 text-sm text-white/75">
+              <p>Phone: <a class="hover:text-white transition" href="tel:+441132570861">0113 257 0861</a></p>
+              <p>Email: <a class="hover:text-white transition" href="mailto:enquiries@example.com">enquiries@example.com</a></p>
+              <p class="text-white/55">Knottingley, West Yorkshire</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 pt-8 border-t border-white/10 text-white/55 text-sm flex flex-col sm:flex-row gap-3 justify-between reveal">
+          <p>© <span id="year"></span> Clifton Forge. All rights reserved.</p>
+          <div class="flex gap-6">
+            <a class="hover:text-white transition" href="#">Privacy</a>
+            <a class="hover:text-white transition" href="#">Terms</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    feather.replace();
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const btn = document.getElementById("menuBtn");
+    const menu = document.getElementById("mobileMenu");
+    const closeLinks = menu.querySelectorAll("[data-close]");
+
+    function setMenuIcon(open){
+      btn.innerHTML = open
+        ? '<i data-feather="x" class="w-5 h-5 text-white"></i>'
+        : '<i data-feather="menu" class="w-5 h-5 text-white"></i>';
+      feather.replace();
+    }
+
+    function isMenuOpen(){ return !menu.classList.contains("hidden"); }
+
+    btn.addEventListener("click", () => {
+      const willOpen = !isMenuOpen();
+      menu.classList.toggle("hidden");
+      btn.setAttribute("aria-expanded", String(willOpen));
+      setMenuIcon(willOpen);
+    });
+
+    closeLinks.forEach(a => a.addEventListener("click", () => {
+      menu.classList.add("hidden");
+      btn.setAttribute("aria-expanded", "false");
+      setMenuIcon(false);
+    }));
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 1024) {
+        menu.classList.add("hidden");
+        btn.setAttribute("aria-expanded", "false");
+        setMenuIcon(false);
+      }
+    });
+
+    // Fade-in on scroll (REQUIRED)
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.12, rootMargin:"0px 0px -10% 0px"});
+
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
