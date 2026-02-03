@@ -20,6 +20,20 @@
     html{scroll-behavior:smooth}
     body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,"Noto Sans"}
 
+    /* Enhanced hero overlay with professional shadow effect */
+    .hero::before{
+      content:"";
+      position:absolute;inset:0;
+      background: linear-gradient(180deg, rgba(8,8,8,0.85) 0%, rgba(8,8,8,0.6) 45%, rgba(8,8,8,0.75) 100%);
+      pointer-events:none;
+      box-shadow: inset 0 0 150px rgba(0,0,0,0.7);
+    }
+
+    /* Text shadow for better readability on hero */
+    .hero-text-shadow {
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
     /* Minimal reveal (fade + slight rise) */
     .reveal{
       opacity:0;
@@ -28,14 +42,6 @@
       will-change:opacity,transform
     }
     .reveal.is-visible{opacity:1;transform:translateY(0)}
-
-    /* Hero overlay (use #080808 instead of pure black) */
-    .hero::before{
-      content:"";
-      position:absolute;inset:0;
-      background:linear-gradient(180deg, rgba(8,8,8,.55) 0%, rgba(8,8,8,.35) 45%, rgba(8,8,8,.55) 100%);
-      pointer-events:none;
-    }
 
     /* Card hover (very subtle) */
     .lift{transition:transform .22s ease, box-shadow .22s ease}
@@ -91,6 +97,7 @@
         <!-- Desktop Nav -->
         <nav class="hidden lg:flex items-center gap-8 text-xs tracking-[0.18em] uppercase text-white/85">
           <a class="hover:text-white transition" href="#about">About</a>
+          <a class="hover:text-white transition" href="#tenants">Our Tenants</a>
           <a class="hover:text-white transition" href="#spaces">Spaces to Let</a>
           <a class="hover:text-white transition" href="#location">Location</a>
           <a class="hover:text-white transition" href="#contact">Contact</a>
@@ -120,6 +127,7 @@
       <div class="max-w-7xl mx-auto px-4 py-4">
         <nav class="flex flex-col gap-3 text-white/85 text-sm">
           <a class="py-2 hover:text-white" href="#about" data-close>About</a>
+          <a class="py-2 hover:text-white" href="#tenants" data-close>Our Tenants</a>
           <a class="py-2 hover:text-white" href="#spaces" data-close>Spaces to Let</a>
           <a class="py-2 hover:text-white" href="#location" data-close>Location</a>
           <a class="py-2 hover:text-white" href="#contact" data-close>Contact</a>
@@ -142,12 +150,12 @@
         <div class="max-w-4xl mx-auto px-4 text-center text-white">
           <p class="text-xs tracking-[0.22em] uppercase text-white/70 reveal">Knottingley • West Yorkshire</p>
 
-          <h1 class="mt-4 text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight leading-[1.06] reveal">
-            Industrial workspace with character — built for modern teams
+          <h1 class="mt-4 text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight leading-[1.06] reveal hero-text-shadow">
+            Practical workspace for local businesses — from garages to workshops
           </h1>
 
           <p class="mt-5 text-white/75 max-w-2xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed reveal">
-            Flexible units for office, light industrial and studio use — a practical, distinctive setting with straightforward access.
+            Affordable units perfect for mechanics, repair shops, storage, dog trainers, lawnmower services and other local trades. All with easy access and parking.
           </p>
 
           <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 reveal">
@@ -172,10 +180,10 @@
               Clifton Forge, Knottingley
             </h2>
             <p class="mt-5 text-muted leading-relaxed">
-              A distinctive industrial setting updated for today’s occupiers — with flexible units, shared facilities and practical access.
+              A practical industrial setting updated for today's trades and small businesses — with flexible units, shared facilities and easy access.
             </p>
             <p class="mt-4 text-muted leading-relaxed">
-              Suitable for growing businesses, established operators and makers looking for straightforward space with presence.
+              Perfect for mechanics, repair services, storage companies, dog trainers, and other local businesses looking for affordable, no-fuss workspace.
             </p>
 
             <div class="mt-8 grid sm:grid-cols-3 gap-3">
@@ -203,8 +211,83 @@
       </div>
     </section>
 
+    <!-- OUR TENANTS SECTION (Same design as Available Units) -->
+    <section id="tenants" class="py-20 bg-paper">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center reveal">
+          <p class="text-xs tracking-[0.22em] uppercase text-muted">Our Tenants</p>
+          <h2 class="mt-3 text-3xl md:text-4xl font-semibold tracking-tight">Meet our current businesses</h2>
+          <p class="mt-4 text-muted max-w-2xl mx-auto">
+            A diverse range of local trades and services operating successfully from Clifton Forge.
+          </p>
+        </div>
+
+        <div class="mt-12 grid md:grid-cols-3 gap-8">
+          <!-- Tenant 1: Auto Garage -->
+          <article class="sq bg-white border border-line lift reveal">
+            <div class="aspect-[16/10] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1600&q=80" alt="Knottingley Auto Repairs" class="w-full h-full object-cover">
+            </div>
+            <div class="p-10 text-center">
+              <p class="text-muted text-lg">Full-service automotive repair & MOT centre</p>
+              <div class="mini-line"></div>
+              <h3 class="mt-8 text-3xl font-medium tracking-tight">Knottingley Auto Repairs</h3>
+              <p class="mt-4 text-muted text-sm">Operating for 3+ years</p>
+              <div class="mt-8">
+                <a href="#contact" class="inline-flex items-center justify-center px-10 py-4 sq bg-accent text-white font-semibold text-xs tracking-[0.18em] uppercase hover:opacity-95 transition">
+                  Learn More
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tenant 2: Lawnmower Doctors -->
+          <article class="sq bg-white border border-line lift reveal">
+            <div class="aspect-[16/10] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1622870627409-2d8f2b8bc476?auto=format&fit=crop&w=1600&q=80" alt="Lawnmower Doctors" class="w-full h-full object-cover">
+            </div>
+            <div class="p-10 text-center">
+              <p class="text-muted text-lg">Garden equipment repair & servicing specialists</p>
+              <div class="mini-line"></div>
+              <h3 class="mt-8 text-3xl font-medium tracking-tight">Lawnmower Doctors</h3>
+              <p class="mt-4 text-muted text-sm">Operating for 2+ years</p>
+              <div class="mt-8">
+                <a href="#contact" class="inline-flex items-center justify-center px-10 py-4 sq bg-accent text-white font-semibold text-xs tracking-[0.18em] uppercase hover:opacity-95 transition">
+                  Learn More
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tenant 3: Dog Trainer -->
+          <article class="sq bg-white border border-line lift reveal">
+            <div class="aspect-[16/10] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1600&q=80" alt="Paws & Train" class="w-full h-full object-cover">
+            </div>
+            <div class="p-10 text-center">
+              <p class="text-muted text-lg">Professional dog training & indoor obedience classes</p>
+              <div class="mini-line"></div>
+              <h3 class="mt-8 text-3xl font-medium tracking-tight">Paws & Train</h3>
+              <p class="mt-4 text-muted text-sm">Operating for 1+ year</p>
+              <div class="mt-8">
+                <a href="#contact" class="inline-flex items-center justify-center px-10 py-4 sq bg-accent text-white font-semibold text-xs tracking-[0.18em] uppercase hover:opacity-95 transition">
+                  Learn More
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-12 text-center reveal">
+          <a href="#contact" class="inline-flex items-center justify-center px-10 py-4 sq border border-line bg-white text-ink font-semibold text-xs tracking-[0.18em] uppercase hover:bg-gray-50 transition">
+            View All Tenants <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- SPACES -->
-    <section id="spaces" class="py-20 bg-paper">
+    <section id="spaces" class="py-20 bg-white">
       <div class="max-w-7xl mx-auto px-4">
         <div class="text-center reveal">
           <p class="text-xs tracking-[0.22em] uppercase text-muted">Spaces to Let</p>
@@ -310,7 +393,7 @@
     <section id="contact" class="py-20 bg-blackish text-white">
       <div class="max-w-4xl mx-auto text-center px-4 reveal">
         <h2 class="text-3xl md:text-5xl font-semibold tracking-tight">
-          Flexible units in a distinctive industrial setting
+          Affordable workspace for local trades and businesses
         </h2>
         <p class="mt-6 text-white/70 text-base md:text-lg leading-relaxed">
           Enquire for current availability, pricing and viewing appointments.
@@ -340,7 +423,7 @@
               loading="lazy"
             />
             <p class="mt-4 text-white/65 text-sm leading-relaxed">
-              Flexible units for office, light industrial and studio use in Knottingley.
+              Flexible units for trades, workshops, storage and small businesses in Knottingley.
             </p>
           </div>
 
@@ -348,6 +431,7 @@
             <p class="text-xs tracking-[0.22em] uppercase text-white/60">Explore</p>
             <ul class="mt-4 space-y-2 text-sm text-white/75">
               <li><a class="hover:text-white transition" href="#about">About</a></li>
+              <li><a class="hover:text-white transition" href="#tenants">Our Tenants</a></li>
               <li><a class="hover:text-white transition" href="#spaces">Spaces to Let</a></li>
               <li><a class="hover:text-white transition" href="#location">Location</a></li>
               <li><a class="hover:text-white transition" href="#contact">Contact</a></li>
