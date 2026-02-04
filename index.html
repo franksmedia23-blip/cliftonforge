@@ -24,15 +24,39 @@
     .hero::before{
       content:"";
       position:absolute;inset:0;
-      background: linear-gradient(90deg, rgba(8,8,8,0.85) 0%, rgba(8,8,8,0.6) 45%, rgba(8,8,8,0.45) 100%);
+      background: linear-gradient(90deg, rgba(8,8,8,0.85) 0%, rgba(8,8,8,0.60) 45%, rgba(8,8,8,0.45) 100%);
       pointer-events:none;
       box-shadow: inset 0 0 150px rgba(0,0,0,0.7);
+      z-index:1; /* above video */
+    }
+
+    /* Streamable iframe as full-bleed hero background */
+    .hero-media{
+      position:absolute;
+      inset:0;
+      overflow:hidden;
+      z-index:0;
+      background:#080808; /* fallback color while loading */
+    }
+    .hero-media iframe{
+      position:absolute;
+      top:50%;
+      left:50%;
+      width:130vw;
+      height:130vh;
+      transform:translate(-50%,-50%);
+      border:0;
+      pointer-events:none; /* keeps buttons clickable */
+    }
+    @media (max-aspect-ratio: 16/9){
+      .hero-media iframe{ width:180vw; height:120vh; }
+    }
+    @media (prefers-reduced-motion: reduce){
+      .hero-media{ display:none; }
     }
 
     /* Text shadow for better readability on hero */
-    .hero-text-shadow {
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    }
+    .hero-text-shadow { text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
 
     /* Minimal reveal (fade + slight rise) */
     .reveal{
@@ -84,7 +108,7 @@
     <div class="max-w-7xl mx-auto px-4">
       <div class="h-[88px] flex items-center justify-between gap-6">
 
-        <!-- Brand (NEW LOGO + bigger, safe sizing) -->
+        <!-- Brand -->
         <a href="#" class="flex items-center gap-4">
           <img
             src="https://image2url.com/r2/default/images/1769803763201-25247623-0179-469e-8242-e9a3214b5fe0.png"
@@ -122,7 +146,7 @@
       </div>
     </div>
 
-    <!-- Mobile menu (#080808) -->
+    <!-- Mobile menu -->
     <div id="mobileMenu" class="lg:hidden hidden border-t border-white/10 bg-blackish">
       <div class="max-w-7xl mx-auto px-4 py-4">
         <nav class="flex flex-col gap-3 text-white/85 text-sm">
@@ -141,11 +165,22 @@
 
   <main class="pt-header">
 
-    <!-- HERO -->
+    <!-- HERO (Streamable video background) -->
     <section
       class="relative hero min-h-[78vh] flex items-center bg-cover bg-center"
       style="background-image:url('https://res.cloudinary.com/dki82u9zv/image/upload/v1770150158/DJI_0604_ggyumi.jpg')"
     >
+      <!-- Video layer -->
+      <div class="hero-media" aria-hidden="true">
+        <iframe
+          allow="autoplay; fullscreen"
+          allowfullscreen
+          src="https://streamable.com/e/fy8c6v?autoplay=1&muted=1"
+          title="Clifton Forge background video"
+        ></iframe>
+      </div>
+
+      <!-- Content layer -->
       <div class="relative z-10 w-full">
         <div class="max-w-4xl mx-auto px-4 text-center text-white">
           <p class="text-xs tracking-[0.22em] uppercase text-white/70 reveal">Knottingley • West Yorkshire</p>
@@ -211,7 +246,7 @@
       </div>
     </section>
 
-    <!-- OUR TENANTS SECTION (Same design as Available Units) -->
+    <!-- OUR TENANTS -->
     <section id="tenants" class="py-20 bg-paper">
       <div class="max-w-7xl mx-auto px-4">
         <div class="text-center reveal">
@@ -223,7 +258,6 @@
         </div>
 
         <div class="mt-12 grid md:grid-cols-3 gap-8">
-          <!-- Tenant 1: Auto Garage -->
           <article class="sq bg-white border border-line lift reveal">
             <div class="aspect-[16/10] overflow-hidden">
               <img src="https://i.postimg.cc/yN2q3SYB/DJI-0619.jpg" alt="ATG MOT Centre" class="w-full h-full object-cover">
@@ -241,7 +275,6 @@
             </div>
           </article>
 
-          <!-- Tenant 2: Lawnmower Doctors -->
           <article class="sq bg-white border border-line lift reveal">
             <div class="aspect-[16/10] overflow-hidden">
               <img src="https://i.postimg.cc/QxgXLSN9/DSC-0895.jpg" alt="Lawnmower Doctors" class="w-full h-full object-cover">
@@ -259,10 +292,9 @@
             </div>
           </article>
 
-          <!-- Tenant 3:  -->
           <article class="sq bg-white border border-line lift reveal">
             <div class="aspect-[16/10] overflow-hidden">
-              <img src="https://i.postimg.cc/FFWyygXp/DSC-0901.jpg" alt="Paws & Train" class="w-full h-full object-cover">
+              <img src="https://i.postimg.cc/FFWyygXp/DSC-0901.jpg" alt="Example 3" class="w-full h-full object-cover">
             </div>
             <div class="p-10 text-center">
               <p class="text-muted text-lg">Example 3 Description</p>
@@ -286,187 +318,130 @@
       </div>
     </section>
 
-      
-      
-<!-- SPACES (Professional / Minimal / Agency) -->
-<section id="spaces" class="py-20 bg-paper">
-  <div class="max-w-6xl mx-auto px-4">
-    <!-- Header -->
-    <div class="text-center reveal">
-      <p class="text-xs tracking-[0.28em] uppercase text-muted">Spaces to Let</p>
-      <h2 class="mt-3 text-3xl md:text-4xl font-semibold tracking-tight text-ink">
-        Current availability
-      </h2>
-      <p class="mt-4 text-muted max-w-2xl mx-auto leading-relaxed">
-        Clifton Forge is currently fully occupied. Register your interest and we’ll contact you if space becomes available.
-      </p>
-    </div>
-
-    <!-- Two-column layout -->
-    <div class="mt-12 grid lg:grid-cols-2 gap-8 reveal">
-      <!-- LEFT: Status & Contact -->
-      <div class="sq border border-line bg-white p-8">
-        <!-- Top row -->
-        <div class="flex items-start justify-between gap-6">
-          <div>
-            <p class="text-xs uppercase tracking-[0.18em] text-muted">Status</p>
-            <h3 class="mt-2 text-2xl font-semibold tracking-tight text-ink leading-tight">
-              Fully occupied
-            </h3>
-          </div>
-
-          <!-- Inline SVG icon (always visible) -->
-          <div class="w-12 h-12 sq bg-slate-50 border border-line flex items-center justify-center flex-shrink-0">
-            <svg
-              class="w-5 h-5 text-ink/80"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M3 21h18" />
-              <path d="M5 21V7l7-4 7 4v14" />
-              <path d="M9 9h.01" />
-              <path d="M9 12h.01" />
-              <path d="M9 15h.01" />
-              <path d="M15 9h.01" />
-              <path d="M15 12h.01" />
-              <path d="M15 15h.01" />
-            </svg>
-          </div>
-        </div>
-
-        <!-- Body copy -->
-        <p class="mt-5 text-sm text-muted leading-relaxed">
-          All commercial units at Clifton Forge are currently leased. If you register your details, we will retain them for
-          consideration and contact you should a suitable unit become available.
-        </p>
-
-        <!-- Enquiries -->
-        <div class="mt-6 pt-6 border-t border-line/60">
-          <p class="text-xs uppercase tracking-[0.18em] text-muted">Enquiries</p>
-
-          <div class="mt-3 space-y-3">
-            <!-- Phone -->
-            <a
-              href="tel:+441132570861"
-              class="inline-flex items-center justify-center w-full px-4 py-2.5 sq border border-line bg-white
-                     text-ink font-medium text-sm hover:border-ink/20 hover:bg-slate-50 transition
-                     focus:outline-none focus:ring-2 focus:ring-ink/10"
-            >
-              0113 257 0861
-            </a>
-
-            <!-- Email -->
-            <a
-              href="mailto:example@example.com"
-              class="inline-flex items-center justify-center w-full px-4 py-2.5 sq border border-line bg-slate-50
-                     text-ink font-medium text-sm hover:bg-slate-100 hover:border-ink/20 transition
-                     focus:outline-none focus:ring-2 focus:ring-ink/10"
-            >
-              example@example.com
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- RIGHT: Registration form -->
-      <div class="sq border border-line bg-white p-8">
-        <div class="mb-6">
-          <h3 class="text-lg font-semibold tracking-tight text-ink">Register interest</h3>
-          <p class="mt-1 text-sm text-muted leading-relaxed">
-            A short form to capture your details for future availability.
+    <!-- SPACES -->
+    <section id="spaces" class="py-20 bg-paper">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center reveal">
+          <p class="text-xs tracking-[0.28em] uppercase text-muted">Spaces to Let</p>
+          <h2 class="mt-3 text-3xl md:text-4xl font-semibold tracking-tight text-ink">
+            Current availability
+          </h2>
+          <p class="mt-4 text-muted max-w-2xl mx-auto leading-relaxed">
+            Clifton Forge is currently fully occupied. Register your interest and we’ll contact you if space becomes available.
           </p>
         </div>
 
-        <form class="space-y-4">
-          <!-- Name -->
-          <div>
-            <label class="block text-xs font-medium uppercase tracking-[0.12em] text-muted mb-1">
-              Contact name <span class="text-accent">*</span>
-            </label>
-            <input
-              type="text"
-              required
-              class="w-full sq border border-line bg-white px-4 py-3 text-sm text-ink
-                     placeholder:text-slate-400 focus:outline-none
-                     focus:border-accent focus:ring-2 focus:ring-accent/15 transition"
-              placeholder="John Smith"
-            />
-          </div>
+        <div class="mt-12 grid lg:grid-cols-2 gap-8 reveal">
+          <!-- Left -->
+          <div class="sq border border-line bg-white p-8">
+            <div class="flex items-start justify-between gap-6">
+              <div>
+                <p class="text-xs uppercase tracking-[0.18em] text-muted">Status</p>
+                <h3 class="mt-2 text-2xl font-semibold tracking-tight text-ink leading-tight">
+                  Fully occupied
+                </h3>
+              </div>
 
-          <!-- Business -->
-          <div>
-            <label class="block text-xs font-medium uppercase tracking-[0.12em] text-muted mb-1">
-              Business name <span class="text-accent">*</span>
-            </label>
-            <input
-              type="text"
-              required
-              class="w-full sq border border-line bg-white px-4 py-3 text-sm text-ink
-                     placeholder:text-slate-400 focus:outline-none
-                     focus:border-accent focus:ring-2 focus:ring-accent/15 transition"
-              placeholder="Your company name"
-            />
-          </div>
+              <div class="w-12 h-12 sq bg-slate-50 border border-line flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-ink/80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M3 21h18" />
+                  <path d="M5 21V7l7-4 7 4v14" />
+                  <path d="M9 9h.01" />
+                  <path d="M9 12h.01" />
+                  <path d="M9 15h.01" />
+                  <path d="M15 9h.01" />
+                  <path d="M15 12h.01" />
+                  <path d="M15 15h.01" />
+                </svg>
+              </div>
+            </div>
 
-          <!-- Email -->
-          <div>
-            <label class="block text-xs font-medium uppercase tracking-[0.12em] text-muted mb-1">
-              Contact email <span class="text-accent">*</span>
-            </label>
-            <input
-              type="email"
-              required
-              class="w-full sq border border-line bg-white px-4 py-3 text-sm text-ink
-                     placeholder:text-slate-400 focus:outline-none
-                     focus:border-accent focus:ring-2 focus:ring-accent/15 transition"
-              placeholder="contact@company.com"
-            />
-          </div>
-
-          <!-- Consent -->
-          <div class="pt-2">
-            <label class="flex items-start gap-3 cursor-pointer select-none">
-              <input
-                type="checkbox"
-                required
-                class="mt-1 w-4 h-4 sq border border-line text-accent focus:ring-2 focus:ring-accent/20"
-              />
-              <span class="text-xs text-muted leading-relaxed">
-                I agree to be contacted regarding future availability.
-              </span>
-            </label>
-          </div>
-
-          <!-- Submit -->
-          <div class="pt-2">
-            <button
-              type="submit"
-              class="w-full inline-flex items-center justify-center px-6 py-3 sq bg-ink
-                     text-white font-medium text-xs tracking-[0.18em] uppercase
-                     hover:opacity-95 active:translate-y-[1px] transition
-                     focus:outline-none focus:ring-2 focus:ring-ink/15"
-            >
-              Submit
-            </button>
-
-            <p class="mt-3 text-[11px] text-muted leading-relaxed">
-              We’ll use your details only for availability updates.
+            <p class="mt-5 text-sm text-muted leading-relaxed">
+              All commercial units at Clifton Forge are currently leased. If you register your details, we will retain them for
+              consideration and contact you should a suitable unit become available.
             </p>
+
+            <div class="mt-6 pt-6 border-t border-line/60">
+              <p class="text-xs uppercase tracking-[0.18em] text-muted">Enquiries</p>
+
+              <div class="mt-3 space-y-3">
+                <a href="tel:+441132570861" class="inline-flex items-center justify-center w-full px-4 py-2.5 sq border border-line bg-white
+                     text-ink font-medium text-sm hover:border-ink/20 hover:bg-slate-50 transition
+                     focus:outline-none focus:ring-2 focus:ring-ink/10">
+                  0113 257 0861
+                </a>
+
+                <a href="mailto:example@example.com" class="inline-flex items-center justify-center w-full px-4 py-2.5 sq border border-line bg-slate-50
+                     text-ink font-medium text-sm hover:bg-slate-100 hover:border-ink/20 transition
+                     focus:outline-none focus:ring-2 focus:ring-ink/10">
+                  example@example.com
+                </a>
+              </div>
+            </div>
           </div>
-        </form>
+
+          <!-- Right -->
+          <div class="sq border border-line bg-white p-8">
+            <div class="mb-6">
+              <h3 class="text-lg font-semibold tracking-tight text-ink">Register interest</h3>
+              <p class="mt-1 text-sm text-muted leading-relaxed">
+                A short form to capture your details for future availability.
+              </p>
+            </div>
+
+            <form class="space-y-4">
+              <div>
+                <label class="block text-xs font-medium uppercase tracking-[0.12em] text-muted mb-1">
+                  Contact name <span class="text-accent">*</span>
+                </label>
+                <input type="text" required class="w-full sq border border-line bg-white px-4 py-3 text-sm text-ink
+                     placeholder:text-slate-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/15 transition"
+                     placeholder="John Smith" />
+              </div>
+
+              <div>
+                <label class="block text-xs font-medium uppercase tracking-[0.12em] text-muted mb-1">
+                  Business name <span class="text-accent">*</span>
+                </label>
+                <input type="text" required class="w-full sq border border-line bg-white px-4 py-3 text-sm text-ink
+                     placeholder:text-slate-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/15 transition"
+                     placeholder="Your company name" />
+              </div>
+
+              <div>
+                <label class="block text-xs font-medium uppercase tracking-[0.12em] text-muted mb-1">
+                  Contact email <span class="text-accent">*</span>
+                </label>
+                <input type="email" required class="w-full sq border border-line bg-white px-4 py-3 text-sm text-ink
+                     placeholder:text-slate-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/15 transition"
+                     placeholder="contact@company.com" />
+              </div>
+
+              <div class="pt-2">
+                <label class="flex items-start gap-3 cursor-pointer select-none">
+                  <input type="checkbox" required class="mt-1 w-4 h-4 sq border border-line text-accent focus:ring-2 focus:ring-accent/20" />
+                  <span class="text-xs text-muted leading-relaxed">
+                    I agree to be contacted regarding future availability.
+                  </span>
+                </label>
+              </div>
+
+              <div class="pt-2">
+                <button type="submit" class="w-full inline-flex items-center justify-center px-6 py-3 sq bg-ink
+                     text-white font-medium text-xs tracking-[0.18em] uppercase hover:opacity-95 active:translate-y-[1px] transition
+                     focus:outline-none focus:ring-2 focus:ring-ink/15">
+                  Submit
+                </button>
+
+                <p class="mt-3 text-[11px] text-muted leading-relaxed">
+                  We’ll use your details only for availability updates.
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-
-
-
-
+    </section>
 
     <!-- LOCATION -->
     <section id="location" class="py-20">
@@ -508,7 +483,7 @@
       </div>
     </section>
 
-    <!-- CTA (#080808) -->
+    <!-- CTA -->
     <section id="contact" class="py-20 bg-blackish text-white">
       <div class="max-w-4xl mx-auto text-center px-4 reveal">
         <h2 class="text-3xl md:text-5xl font-semibold tracking-tight">
@@ -530,7 +505,7 @@
       </div>
     </section>
 
-    <!-- FOOTER (#080808 + bigger, appropriate logo) -->
+    <!-- FOOTER -->
     <footer class="bg-blackish text-white border-t border-white/10">
       <div class="max-w-7xl mx-auto px-4 py-12">
         <div class="grid md:grid-cols-3 gap-10">
@@ -618,7 +593,7 @@
       }
     });
 
-    // Fade-in on scroll
+    // Reveal on scroll
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(entry=>{
         if(entry.isIntersecting){
@@ -632,3 +607,4 @@
   </script>
 </body>
 </html>
+
