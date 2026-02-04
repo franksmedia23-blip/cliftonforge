@@ -27,30 +27,41 @@
       background: linear-gradient(90deg, rgba(8,8,8,0.85) 0%, rgba(8,8,8,0.60) 45%, rgba(8,8,8,0.45) 100%);
       pointer-events:none;
       box-shadow: inset 0 0 150px rgba(0,0,0,0.7);
-      z-index:1; /* above video */
+      z-index:2; /* above poster/video */
     }
 
-    /* Streamable iframe as full-bleed hero background */
+    /* Streamable hero background (cover + no UI flash) */
     .hero-media{
       position:absolute;
       inset:0;
       overflow:hidden;
-      z-index:0;
-      background:#080808; /* fallback color while loading */
+      z-index:1;
+      background:#080808;
     }
+
     .hero-media iframe{
       position:absolute;
       top:50%;
       left:50%;
-      width:130vw;
-      height:130vh;
       transform:translate(-50%,-50%);
       border:0;
-      pointer-events:none; /* keeps buttons clickable */
+      pointer-events:none; /* keep hero buttons clickable */
+      opacity:0;          /* fade in after load */
+      transition:opacity .45s ease;
+      /* cover math (desktop/tablet) */
+      width:max(120vw, 120vh * 16 / 9);
+      height:max(120vh, 120vw * 9 / 16);
     }
-    @media (max-aspect-ratio: 16/9){
-      .hero-media iframe{ width:180vw; height:120vh; }
+
+    /* portrait phones need more oversize to guarantee fill */
+    @media (max-width: 640px){
+      .hero-media iframe{
+        width:max(180vw, 120vh * 16 / 9);
+        height:max(120vh, 180vw * 9 / 16);
+      }
     }
+
+    /* Reduced motion: hide video, keep poster background */
     @media (prefers-reduced-motion: reduce){
       .hero-media{ display:none; }
     }
@@ -146,7 +157,7 @@
       </div>
     </div>
 
-    <!-- Mobile menu -->
+    <!-- Mobile menu (#080808) -->
     <div id="mobileMenu" class="lg:hidden hidden border-t border-white/10 bg-blackish">
       <div class="max-w-7xl mx-auto px-4 py-4">
         <nav class="flex flex-col gap-3 text-white/85 text-sm">
@@ -165,22 +176,30 @@
 
   <main class="pt-header">
 
-    <!-- HERO (Streamable video background) -->
+    <!-- HERO (Streamable cover + poster + fade-in) -->
     <section
       class="relative hero min-h-[78vh] flex items-center bg-cover bg-center"
       style="background-image:url('https://res.cloudinary.com/dki82u9zv/image/upload/v1770150158/DJI_0604_ggyumi.jpg')"
     >
+      <!-- Poster layer (instant, always covers) -->
+      <div
+        class="absolute inset-0 bg-cover bg-center"
+        style="background-image:url('https://res.cloudinary.com/dki82u9zv/image/upload/v1770150158/DJI_0604_ggyumi.jpg')"
+        aria-hidden="true"
+      ></div>
+
       <!-- Video layer -->
       <div class="hero-media" aria-hidden="true">
         <iframe
+          id="heroVideo"
           allow="autoplay; fullscreen"
           allowfullscreen
-          src="https://streamable.com/e/fy8c6v?autoplay=1&muted=1"
           title="Clifton Forge background video"
+          src="https://streamable.com/e/5grqp9?autoplay=1&muted=1&nocontrols=1&loop=1"
         ></iframe>
       </div>
 
-      <!-- Content layer -->
+      <!-- Hero content -->
       <div class="relative z-10 w-full">
         <div class="max-w-4xl mx-auto px-4 text-center text-white">
           <p class="text-xs tracking-[0.22em] uppercase text-white/70 reveal">Knottingley • West Yorkshire</p>
@@ -246,7 +265,7 @@
       </div>
     </section>
 
-    <!-- OUR TENANTS -->
+    <!-- OUR TENANTS SECTION -->
     <section id="tenants" class="py-20 bg-paper">
       <div class="max-w-7xl mx-auto px-4">
         <div class="text-center reveal">
@@ -332,7 +351,6 @@
         </div>
 
         <div class="mt-12 grid lg:grid-cols-2 gap-8 reveal">
-          <!-- Left -->
           <div class="sq border border-line bg-white p-8">
             <div class="flex items-start justify-between gap-6">
               <div>
@@ -380,7 +398,6 @@
             </div>
           </div>
 
-          <!-- Right -->
           <div class="sq border border-line bg-white p-8">
             <div class="mb-6">
               <h3 class="text-lg font-semibold tracking-tight text-ink">Register interest</h3>
@@ -604,7 +621,14 @@
     }, {threshold:0.12, rootMargin:"0px 0px -10% 0px"});
 
     document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+    // Fade in Streamable iframe after load to reduce UI flash
+    const heroIframe = document.getElementById("heroVideo");
+    if (heroIframe) {
+      heroIframe.addEventListener("load", () => {
+        heroIframe.style.opacity = "1";
+      });
+    }
   </script>
 </body>
 </html>
-
