@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clifton Forge | Workspace to Let</title>
+  <title>Clifton Forge | Industrial Estate Knottingley</title>
 
   <!-- Font (modern + clean) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -286,92 +286,186 @@
       </div>
     </section>
 
-<!-- SPACES -->
+      
+      
+<!-- SPACES (Professional / Minimal / Agency) -->
 <section id="spaces" class="py-20 bg-paper">
   <div class="max-w-6xl mx-auto px-4">
+    <!-- Header -->
     <div class="text-center reveal">
-      <p class="text-xs tracking-[0.22em] uppercase text-muted">Spaces to Let</p>
-      <h2 class="mt-3 text-3xl md:text-4xl font-semibold tracking-tight">Available units</h2>
-      <p class="mt-4 text-muted max-w-2xl mx-auto">
-        Register your interest for future workspace availability.
+      <p class="text-xs tracking-[0.28em] uppercase text-muted">Spaces to Let</p>
+      <h2 class="mt-3 text-3xl md:text-4xl font-semibold tracking-tight text-ink">
+        Current availability
+      </h2>
+      <p class="mt-4 text-muted max-w-2xl mx-auto leading-relaxed">
+        Clifton Forge is currently fully occupied. Register your interest and we’ll contact you if space becomes available.
       </p>
     </div>
 
-    <!-- Side-by-side layout -->
+    <!-- Two-column layout -->
     <div class="mt-12 grid lg:grid-cols-2 gap-8 reveal">
-      
-      <!-- Left: Professional Status Message -->
+      <!-- LEFT: Status & Contact -->
       <div class="sq border border-line bg-white p-8">
-        <div class="flex items-start gap-4">
-          <div class="w-10 h-10 bg-accent/10 flex items-center justify-center sq flex-shrink-0">
-            <i data-feather="home" class="w-5 h-5 text-accent"></i>
-          </div>
+        <!-- Top row -->
+        <div class="flex items-start justify-between gap-6">
           <div>
-            <h3 class="text-lg font-semibold tracking-tight">Current status: Fully occupied</h3>
-            <p class="mt-2 text-sm text-muted leading-relaxed">
-              All commercial units at Clifton Forge are currently leased to established tenants. 
-              We maintain a priority waiting list and will contact registered businesses as soon as space becomes available.
-            </p>
-            
-            <!-- Contact option integrated -->
-            <div class="mt-6 pt-6 border-t border-line/50">
-              <p class="text-sm font-medium mb-3">For immediate enquiries:</p>
-              <a href="tel:+441132570861" class="inline-flex items-center gap-2 text-accent font-medium hover:underline">
-                <i data-feather="phone" class="w-4 h-4"></i>
-                <span>0113 257 0861</span>
-              </a>
-              <p class="mt-2 text-xs text-muted">Lettings team available Mon-Fri, 9am-5pm</p>
-            </div>
+            <p class="text-xs uppercase tracking-[0.18em] text-muted">Status</p>
+            <h3 class="mt-2 text-2xl font-semibold tracking-tight text-ink leading-tight">
+              Fully occupied
+            </h3>
+          </div>
+
+          <!-- Inline SVG icon (always visible) -->
+          <div class="w-12 h-12 sq bg-slate-50 border border-line flex items-center justify-center flex-shrink-0">
+            <svg
+              class="w-5 h-5 text-ink/80"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M3 21h18" />
+              <path d="M5 21V7l7-4 7 4v14" />
+              <path d="M9 9h.01" />
+              <path d="M9 12h.01" />
+              <path d="M9 15h.01" />
+              <path d="M15 9h.01" />
+              <path d="M15 12h.01" />
+              <path d="M15 15h.01" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Body copy -->
+        <p class="mt-5 text-sm text-muted leading-relaxed">
+          All commercial units at Clifton Forge are currently leased. If you register your details, we will retain them for
+          consideration and contact you should a suitable unit become available.
+        </p>
+
+        <!-- Enquiries -->
+        <div class="mt-6 pt-6 border-t border-line/60">
+          <p class="text-xs uppercase tracking-[0.18em] text-muted">Enquiries</p>
+
+          <div class="mt-3 space-y-3">
+            <!-- Phone -->
+            <a
+              href="tel:+441132570861"
+              class="inline-flex items-center justify-center w-full px-4 py-2.5 sq border border-line bg-white
+                     text-ink font-medium text-sm hover:border-ink/20 hover:bg-slate-50 transition
+                     focus:outline-none focus:ring-2 focus:ring-ink/10"
+            >
+              0113 257 0861
+            </a>
+
+            <!-- Email -->
+            <a
+              href="mailto:example@example.com"
+              class="inline-flex items-center justify-center w-full px-4 py-2.5 sq border border-line bg-slate-50
+                     text-ink font-medium text-sm hover:bg-slate-100 hover:border-ink/20 transition
+                     focus:outline-none focus:ring-2 focus:ring-ink/10"
+            >
+              example@example.com
+            </a>
           </div>
         </div>
       </div>
 
-      <!-- Right: Minimal Registration Form -->
-      <div class="sq bg-white border border-line p-8">
+      <!-- RIGHT: Registration form -->
+      <div class="sq border border-line bg-white p-8">
         <div class="mb-6">
-          <h3 class="text-lg font-semibold tracking-tight">Register interest</h3>
-          <p class="mt-1 text-sm text-muted">
-            Join our priority waiting list (3-4 fields only).
+          <h3 class="text-lg font-semibold tracking-tight text-ink">Register interest</h3>
+          <p class="mt-1 text-sm text-muted leading-relaxed">
+            A short form to capture your details for future availability.
           </p>
         </div>
 
         <form class="space-y-4">
+          <!-- Name -->
           <div>
-            <label class="block text-xs font-medium uppercase tracking-[0.1em] text-muted mb-1">Contact name *</label>
-            <input type="text" required class="w-full sq border border-line px-4 py-2.5 text-sm focus:outline-none focus:border-accent transition" placeholder="John Smith">
+            <label class="block text-xs font-medium uppercase tracking-[0.12em] text-muted mb-1">
+              Contact name <span class="text-accent">*</span>
+            </label>
+            <input
+              type="text"
+              required
+              class="w-full sq border border-line bg-white px-4 py-3 text-sm text-ink
+                     placeholder:text-slate-400 focus:outline-none
+                     focus:border-accent focus:ring-2 focus:ring-accent/15 transition"
+              placeholder="John Smith"
+            />
           </div>
 
+          <!-- Business -->
           <div>
-            <label class="block text-xs font-medium uppercase tracking-[0.1em] text-muted mb-1">Business name *</label>
-            <input type="text" required class="w-full sq border border-line px-4 py-2.5 text-sm focus:outline-none focus:border-accent transition" placeholder="Your company name">
+            <label class="block text-xs font-medium uppercase tracking-[0.12em] text-muted mb-1">
+              Business name <span class="text-accent">*</span>
+            </label>
+            <input
+              type="text"
+              required
+              class="w-full sq border border-line bg-white px-4 py-3 text-sm text-ink
+                     placeholder:text-slate-400 focus:outline-none
+                     focus:border-accent focus:ring-2 focus:ring-accent/15 transition"
+              placeholder="Your company name"
+            />
           </div>
 
+          <!-- Email -->
           <div>
-            <label class="block text-xs font-medium uppercase tracking-[0.1em] text-muted mb-1">Contact email *</label>
-            <input type="email" required class="w-full sq border border-line px-4 py-2.5 text-sm focus:outline-none focus:border-accent transition" placeholder="contact@company.com">
+            <label class="block text-xs font-medium uppercase tracking-[0.12em] text-muted mb-1">
+              Contact email <span class="text-accent">*</span>
+            </label>
+            <input
+              type="email"
+              required
+              class="w-full sq border border-line bg-white px-4 py-3 text-sm text-ink
+                     placeholder:text-slate-400 focus:outline-none
+                     focus:border-accent focus:ring-2 focus:ring-accent/15 transition"
+              placeholder="contact@company.com"
+            />
           </div>
 
+          <!-- Consent -->
           <div class="pt-2">
-            <div class="flex items-start">
-              <div class="flex items-center h-5 mt-0.5">
-                <input type="checkbox" required class="w-4 h-4 sq border border-line text-accent focus:ring-1 focus:ring-accent/30">
-              </div>
-              <label class="ml-3 text-xs text-muted leading-relaxed">
-                I agree to be contacted about future availability
-              </label>
-            </div>
+            <label class="flex items-start gap-3 cursor-pointer select-none">
+              <input
+                type="checkbox"
+                required
+                class="mt-1 w-4 h-4 sq border border-line text-accent focus:ring-2 focus:ring-accent/20"
+              />
+              <span class="text-xs text-muted leading-relaxed">
+                I agree to be contacted regarding future availability.
+              </span>
+            </label>
           </div>
 
+          <!-- Submit -->
           <div class="pt-2">
-            <button type="submit" class="w-full inline-flex items-center justify-center px-6 py-3 sq bg-accent text-white font-medium text-xs tracking-[0.15em] uppercase hover:bg-accent/90 transition">
-              Submit Registration
+            <button
+              type="submit"
+              class="w-full inline-flex items-center justify-center px-6 py-3 sq bg-ink
+                     text-white font-medium text-xs tracking-[0.18em] uppercase
+                     hover:opacity-95 active:translate-y-[1px] transition
+                     focus:outline-none focus:ring-2 focus:ring-ink/15"
+            >
+              Submit
             </button>
+
+            <p class="mt-3 text-[11px] text-muted leading-relaxed">
+              We’ll use your details only for availability updates.
+            </p>
           </div>
         </form>
       </div>
     </div>
   </div>
 </section>
+
+
+
 
 
     <!-- LOCATION -->
