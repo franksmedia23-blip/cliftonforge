@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clifton Forge | Industrial Estate Knottingley</title>
+  <title>Clifton Forge | Industrial Workspace in Knottingley, West Yorkshire</title>
 
   <!-- Font (modern + clean) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -92,6 +92,35 @@
 
     /* Header height helper */
     .pt-header{padding-top:88px}
+
+    /* Google Maps container */
+    .map-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 400px;
+    }
+
+    .map-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Professional form styling */
+    .form-input {
+      transition: all 0.2s ease;
+      border: 1px solid #e5e7eb;
+    }
+
+    .form-input:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+      outline: none;
+    }
   </style>
 
   <script>
@@ -104,7 +133,8 @@
             muted: "#6B7280",
             paper: "#F7F7F7",
             accent: "#3B82F6",
-            blackish: "#080808"
+            blackish: "#080808",
+            darknavy: "#0E1F3B"
           }
         }
       }
@@ -205,19 +235,19 @@
           <p class="text-xs tracking-[0.22em] uppercase text-white/70 reveal">Knottingley • West Yorkshire</p>
 
           <h1 class="mt-4 text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight leading-[1.06] reveal hero-text-shadow">
-            Practical workspace for local businesses
+            Practical industrial workspace for established trades
           </h1>
 
           <p class="mt-5 text-white/75 max-w-2xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed reveal">
-            Affordable units perfect for mechanics, repair shops, storage, dog trainers, lawnmower services and other local trades. All with easy access and parking.
+            Currently home to automotive workshops, garden equipment specialists, storage operators, and light industrial businesses. Secure, accessible units with on-site parking and loading facilities.
           </p>
 
           <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 reveal">
             <a href="#spaces" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 sq bg-accent text-white font-semibold text-sm tracking-[0.14em] uppercase hover:opacity-95 transition">
-              View Spaces
+              Current Availability
             </a>
             <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 sq border border-white/35 text-white font-semibold text-sm tracking-[0.14em] uppercase hover:bg-white/10 transition">
-              Contact Us
+              Arrange Viewing
             </a>
           </div>
         </div>
@@ -231,34 +261,34 @@
           <div class="reveal">
             <p class="text-xs tracking-[0.22em] uppercase text-muted">About</p>
             <h2 class="mt-3 text-3xl md:text-4xl font-semibold tracking-tight">
-              Clifton Forge, Knottingley
+              Clifton Forge Industrial Estate
             </h2>
             <p class="mt-5 text-muted leading-relaxed">
-              A practical industrial setting updated for today's trades and small businesses — with flexible units, shared facilities and easy access.
+              A well-established industrial setting in Knottingley, providing secure, practical workspace for a range of trades and light industrial operations.
             </p>
             <p class="mt-4 text-muted leading-relaxed">
-              Perfect for mechanics, repair services, storage companies, dog trainers, and other local businesses looking for affordable, no-fuss workspace.
+              With dedicated parking, loading facilities, and modern amenities, our units are designed to support businesses that require both indoor workspace and external access.
             </p>
 
             <div class="mt-8 grid sm:grid-cols-3 gap-3">
               <div class="sq border border-line p-4">
-                <p class="text-xs uppercase tracking-[0.18em] text-muted">Flexible</p>
-                <p class="mt-1 font-semibold">Units & floors</p>
+                <p class="text-xs uppercase tracking-[0.18em] text-muted">Secure</p>
+                <p class="mt-1 font-semibold">Gated site access</p>
               </div>
               <div class="sq border border-line p-4">
                 <p class="text-xs uppercase tracking-[0.18em] text-muted">Practical</p>
-                <p class="mt-1 font-semibold">Parking & access</p>
+                <p class="mt-1 font-semibold">Loading & parking</p>
               </div>
               <div class="sq border border-line p-4">
-                <p class="text-xs uppercase tracking-[0.18em] text-muted">Industrial</p>
-                <p class="mt-1 font-semibold">Work-ready</p>
+                <p class="text-xs uppercase tracking-[0.18em] text-muted">Established</p>
+                <p class="mt-1 font-semibold">Long-term tenants</p>
               </div>
             </div>
           </div>
 
           <div class="reveal">
             <div class="sq border border-line overflow-hidden bg-paper">
-              <img src="https://i.postimg.cc/zDjd9gZ5/DJI-0616.jpg" alt="Industrial workspace" class="w-full h-[420px] object-cover">
+              <img src="https://res.cloudinary.com/dki82u9zv/image/upload/v1770150349/DJI_0629_htgucw.jpg" alt="Industrial estate access road with loading facilities" class="w-full h-[420px] object-cover">
             </div>
           </div>
         </div>
@@ -270,25 +300,25 @@
       <div class="max-w-7xl mx-auto px-4">
         <div class="text-center reveal">
           <p class="text-xs tracking-[0.22em] uppercase text-muted">Our Tenants</p>
-          <h2 class="mt-3 text-3xl md:text-4xl font-semibold tracking-tight">Meet our current businesses</h2>
+          <h2 class="mt-3 text-3xl md:text-4xl font-semibold tracking-tight">Established businesses at Clifton Forge</h2>
           <p class="mt-4 text-muted max-w-2xl mx-auto">
-            A diverse range of local trades and services operating successfully from Clifton Forge.
+            A diverse range of trades and services operating successfully from our industrial estate.
           </p>
         </div>
 
         <div class="mt-12 grid md:grid-cols-3 gap-8">
           <article class="sq bg-white border border-line lift reveal">
             <div class="aspect-[16/10] overflow-hidden">
-              <img src="https://i.postimg.cc/yN2q3SYB/DJI-0619.jpg" alt="ATG MOT Centre" class="w-full h-full object-cover">
+              <img src="https://i.postimg.cc/yN2q3SYB/DJI-0619.jpg" alt="ATG MOT Centre workshop" class="w-full h-full object-cover">
             </div>
             <div class="p-10 text-center">
               <p class="text-muted text-lg">Full-service automotive repair & MOT centre</p>
               <div class="mini-line"></div>
               <h3 class="mt-8 text-3xl font-medium tracking-tight">ATG MOT Centre</h3>
-              <p class="mt-4 text-muted text-sm">Operating for 3+ years</p>
+              <p class="mt-4 text-muted text-sm">Operating at Clifton Forge for 3+ years</p>
               <div class="mt-8">
                 <a href="#contact" class="inline-flex items-center justify-center px-10 py-4 sq bg-accent text-white font-semibold text-xs tracking-[0.18em] uppercase hover:opacity-95 transition">
-                  Learn More
+                  Contact Tenant
                 </a>
               </div>
             </div>
@@ -296,16 +326,16 @@
 
           <article class="sq bg-white border border-line lift reveal">
             <div class="aspect-[16/10] overflow-hidden">
-              <img src="https://i.postimg.cc/QxgXLSN9/DSC-0895.jpg" alt="Lawnmower Doctors" class="w-full h-full object-cover">
+              <img src="https://i.postimg.cc/QxgXLSN9/DSC-0895.jpg" alt="Lawnmower Doctors workshop" class="w-full h-full object-cover">
             </div>
             <div class="p-10 text-center">
               <p class="text-muted text-lg">Garden equipment repair & servicing specialists</p>
               <div class="mini-line"></div>
               <h3 class="mt-8 text-3xl font-medium tracking-tight">Lawnmower Doctors</h3>
-              <p class="mt-4 text-muted text-sm">Operating for 2+ years</p>
+              <p class="mt-4 text-muted text-sm">Operating at Clifton Forge for 2+ years</p>
               <div class="mt-8">
                 <a href="#contact" class="inline-flex items-center justify-center px-10 py-4 sq bg-accent text-white font-semibold text-xs tracking-[0.18em] uppercase hover:opacity-95 transition">
-                  Learn More
+                  Contact Tenant
                 </a>
               </div>
             </div>
@@ -313,16 +343,16 @@
 
           <article class="sq bg-white border border-line lift reveal">
             <div class="aspect-[16/10] overflow-hidden">
-              <img src="https://i.postimg.cc/FFWyygXp/DSC-0901.jpg" alt="Example 3" class="w-full h-full object-cover">
+              <img src="https://i.postimg.cc/FFWyygXp/DSC-0901.jpg" alt="Storage and logistics operation" class="w-full h-full object-cover">
             </div>
             <div class="p-10 text-center">
-              <p class="text-muted text-lg">Example 3 Description</p>
+              <p class="text-muted text-lg">Secure storage and distribution services</p>
               <div class="mini-line"></div>
-              <h3 class="mt-8 text-3xl font-medium tracking-tight">Example 3</h3>
-              <p class="mt-4 text-muted text-sm">Operating for 1+ year</p>
+              <h3 class="mt-8 text-3xl font-medium tracking-tight">Storage Solutions Ltd</h3>
+              <p class="mt-4 text-muted text-sm">Operating at Clifton Forge for 4+ years</p>
               <div class="mt-8">
                 <a href="#contact" class="inline-flex items-center justify-center px-10 py-4 sq bg-accent text-white font-semibold text-xs tracking-[0.18em] uppercase hover:opacity-95 transition">
-                  Learn More
+                  Contact Tenant
                 </a>
               </div>
             </div>
@@ -338,15 +368,15 @@
     </section>
 
     <!-- SPACES -->
-    <section id="spaces" class="py-20 bg-paper">
+    <section id="spaces" class="py-20 bg-white">
       <div class="max-w-6xl mx-auto px-4">
         <div class="text-center reveal">
           <p class="text-xs tracking-[0.28em] uppercase text-muted">Spaces to Let</p>
           <h2 class="mt-3 text-3xl md:text-4xl font-semibold tracking-tight text-ink">
-            Current availability
+            Current availability status
           </h2>
           <p class="mt-4 text-muted max-w-2xl mx-auto leading-relaxed">
-            Clifton Forge is currently fully occupied. Register your interest and we’ll contact you if space becomes available.
+            All units at Clifton Forge are currently occupied. Register your interest below to be notified when space becomes available.
           </p>
         </div>
 
@@ -375,24 +405,25 @@
             </div>
 
             <p class="mt-5 text-sm text-muted leading-relaxed">
-              All commercial units at Clifton Forge are currently leased. If you register your details, we will retain them for
-              consideration and contact you should a suitable unit become available.
+              All commercial units at Clifton Forge are currently leased to established tenants. We maintain a waiting list for businesses seeking future workspace in Knottingley.
             </p>
 
             <div class="mt-6 pt-6 border-t border-line/60">
-              <p class="text-xs uppercase tracking-[0.18em] text-muted">Enquiries</p>
+              <p class="text-xs uppercase tracking-[0.18em] text-muted">Immediate enquiries</p>
 
               <div class="mt-3 space-y-3">
                 <a href="tel:+441132570861" class="inline-flex items-center justify-center w-full px-4 py-2.5 sq border border-line bg-white
                      text-ink font-medium text-sm hover:border-ink/20 hover:bg-slate-50 transition
                      focus:outline-none focus:ring-2 focus:ring-ink/10">
+                  <i data-feather="phone" class="w-4 h-4 mr-2"></i>
                   0113 257 0861
                 </a>
 
-                <a href="mailto:example@example.com" class="inline-flex items-center justify-center w-full px-4 py-2.5 sq border border-line bg-slate-50
+                <a href="mailto:lettings@cliftonforge.co.uk" class="inline-flex items-center justify-center w-full px-4 py-2.5 sq border border-line bg-slate-50
                      text-ink font-medium text-sm hover:bg-slate-100 hover:border-ink/20 transition
                      focus:outline-none focus:ring-2 focus:ring-ink/10">
-                  example@example.com
+                  <i data-feather="mail" class="w-4 h-4 mr-2"></i>
+                  lettings@cliftonforge.co.uk
                 </a>
               </div>
             </div>
@@ -400,9 +431,9 @@
 
           <div class="sq border border-line bg-white p-8">
             <div class="mb-6">
-              <h3 class="text-lg font-semibold tracking-tight text-ink">Register interest</h3>
+              <h3 class="text-lg font-semibold tracking-tight text-ink">Join waiting list</h3>
               <p class="mt-1 text-sm text-muted leading-relaxed">
-                A short form to capture your details for future availability.
+                Register your interest for future availability (3 fields only).
               </p>
             </div>
 
@@ -411,8 +442,8 @@
                 <label class="block text-xs font-medium uppercase tracking-[0.12em] text-muted mb-1">
                   Contact name <span class="text-accent">*</span>
                 </label>
-                <input type="text" required class="w-full sq border border-line bg-white px-4 py-3 text-sm text-ink
-                     placeholder:text-slate-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/15 transition"
+                <input type="text" required class="w-full sq px-4 py-3 text-sm text-ink form-input
+                     placeholder:text-slate-400"
                      placeholder="John Smith" />
               </div>
 
@@ -420,8 +451,8 @@
                 <label class="block text-xs font-medium uppercase tracking-[0.12em] text-muted mb-1">
                   Business name <span class="text-accent">*</span>
                 </label>
-                <input type="text" required class="w-full sq border border-line bg-white px-4 py-3 text-sm text-ink
-                     placeholder:text-slate-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/15 transition"
+                <input type="text" required class="w-full sq px-4 py-3 text-sm text-ink form-input
+                     placeholder:text-slate-400"
                      placeholder="Your company name" />
               </div>
 
@@ -429,8 +460,8 @@
                 <label class="block text-xs font-medium uppercase tracking-[0.12em] text-muted mb-1">
                   Contact email <span class="text-accent">*</span>
                 </label>
-                <input type="email" required class="w-full sq border border-line bg-white px-4 py-3 text-sm text-ink
-                     placeholder:text-slate-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/15 transition"
+                <input type="email" required class="w-full sq px-4 py-3 text-sm text-ink form-input
+                     placeholder:text-slate-400"
                      placeholder="contact@company.com" />
               </div>
 
@@ -438,7 +469,7 @@
                 <label class="flex items-start gap-3 cursor-pointer select-none">
                   <input type="checkbox" required class="mt-1 w-4 h-4 sq border border-line text-accent focus:ring-2 focus:ring-accent/20" />
                   <span class="text-xs text-muted leading-relaxed">
-                    I agree to be contacted regarding future availability.
+                    I consent to being contacted about future workspace availability.
                   </span>
                 </label>
               </div>
@@ -447,11 +478,11 @@
                 <button type="submit" class="w-full inline-flex items-center justify-center px-6 py-3 sq bg-ink
                      text-white font-medium text-xs tracking-[0.18em] uppercase hover:opacity-95 active:translate-y-[1px] transition
                      focus:outline-none focus:ring-2 focus:ring-ink/15">
-                  Submit
+                  Register Interest
                 </button>
 
                 <p class="mt-3 text-[11px] text-muted leading-relaxed">
-                  We’ll use your details only for availability updates.
+                  Your details will only be used for availability notifications.
                 </p>
               </div>
             </form>
@@ -460,40 +491,74 @@
       </div>
     </section>
 
-    <!-- LOCATION -->
-    <section id="location" class="py-20">
+    <!-- LOCATION with Google Maps -->
+    <section id="location" class="py-20 bg-paper">
       <div class="max-w-7xl mx-auto px-4">
         <div class="grid lg:grid-cols-2 gap-10 items-center">
           <div class="reveal">
             <p class="text-xs tracking-[0.22em] uppercase text-muted">Location</p>
             <h2 class="mt-3 text-3xl md:text-4xl font-semibold tracking-tight">
-              Accessible. Practical. Well connected.
+              Strategic West Yorkshire location
             </h2>
             <p class="mt-5 text-muted leading-relaxed">
-              Clifton Forge sits in Knottingley with straightforward local connections and an easy commute for teams and visitors.
+              Situated in Knottingley with excellent transport links to Leeds, Wakefield, and the M62 motorway network. Ideal for businesses requiring accessible industrial workspace.
             </p>
 
             <div class="mt-8 grid sm:grid-cols-2 gap-4">
-              <div class="sq border border-line p-5">
+              <div class="sq border border-line bg-white p-5">
                 <div class="flex items-center gap-3">
-                  <i data-feather="map-pin" class="w-5 h-5"></i>
-                  <p class="font-semibold">Knottingley</p>
+                  <i data-feather="map-pin" class="w-5 h-5 text-accent"></i>
+                  <p class="font-semibold">Clifton Forge Business Park</p>
                 </div>
-                <p class="mt-2 text-sm text-muted">West Yorkshire</p>
+                <p class="mt-2 text-sm text-muted">Knottingley, West Yorkshire</p>
               </div>
-              <div class="sq border border-line p-5">
+              <div class="sq border border-line bg-white p-5">
                 <div class="flex items-center gap-3">
-                  <i data-feather="truck" class="w-5 h-5"></i>
-                  <p class="font-semibold">Loading / access</p>
+                  <i data-feather="truck" class="w-5 h-5 text-accent"></i>
+                  <p class="font-semibold">Loading access</p>
                 </div>
-                <p class="mt-2 text-sm text-muted">Work-ready logistics</p>
+                <p class="mt-2 text-sm text-muted">Ground-level loading facilities</p>
+              </div>
+            </div>
+
+            <div class="mt-8 sq border border-line bg-white p-5">
+              <p class="text-sm font-medium mb-2">Travel times:</p>
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <p class="text-xs text-muted">Leeds city centre</p>
+                  <p class="text-sm font-semibold">≈ 25 minutes</p>
+                </div>
+                <div>
+                  <p class="text-xs text-muted">M62 (Junction 33)</p>
+                  <p class="text-sm font-semibold">≈ 10 minutes</p>
+                </div>
+                <div>
+                  <p class="text-xs text-muted">Wakefield</p>
+                  <p class="text-sm font-semibold">≈ 15 minutes</p>
+                </div>
+                <div>
+                  <p class="text-xs text-muted">Pontefract</p>
+                  <p class="text-sm font-semibold">≈ 8 minutes</p>
+                </div>
               </div>
             </div>
           </div>
 
           <div class="reveal">
-            <div class="sq border border-line overflow-hidden bg-paper">
-              <img src="https://res.cloudinary.com/dki82u9zv/image/upload/v1770150349/DJI_0629_htgucw.jpg" alt="Industrial access road" class="w-full h-[420px] object-cover">
+            <div class="sq border border-line overflow-hidden bg-white h-[450px]">
+              <!-- Google Maps Embed -->
+              <div class="map-container">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1180.758474075492!2d-1.2549306130185904!3d53.70905271272453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48796b0035debcf7%3A0xc69bf93e40816ae7!2sClifton%20Forge%20Business%20Park!5e0!3m2!1sen!2suk!4v1770312275609!5m2!1sen!2suk"
+                  width="100%" 
+                  height="100%" 
+                  style="border:0;" 
+                  allowfullscreen="" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="Google Maps location of Clifton Forge Business Park in Knottingley, West Yorkshire">
+                </iframe>
+              </div>
             </div>
           </div>
         </div>
@@ -504,21 +569,31 @@
     <section id="contact" class="py-20 bg-blackish text-white">
       <div class="max-w-4xl mx-auto text-center px-4 reveal">
         <h2 class="text-3xl md:text-5xl font-semibold tracking-tight">
-          Affordable workspace for local trades and businesses
+          Industrial workspace for established businesses
         </h2>
         <p class="mt-6 text-white/70 text-base md:text-lg leading-relaxed">
-          Enquire for current availability, pricing and viewing appointments.
+          For enquiries about future availability or to discuss your workspace requirements, contact our lettings team.
         </p>
 
-        <div class="mt-10">
-          <a href="mailto:enquiries@example.com" class="inline-flex items-center justify-center px-10 py-4 sq bg-accent text-white font-semibold text-xs tracking-[0.18em] uppercase hover:opacity-95 transition">
-            Make Enquiry <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+        <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-xl mx-auto">
+          <a href="tel:+441132570861" class="inline-flex items-center justify-center px-8 py-4 sq border border-white/25 text-white font-semibold text-sm tracking-[0.14em] uppercase hover:bg-white/10 transition">
+            <i data-feather="phone" class="w-4 h-4 mr-3"></i>
+            Call 0113 257 0861
+          </a>
+          <a href="mailto:lettings@cliftonforge.co.uk" class="inline-flex items-center justify-center px-8 py-4 sq bg-accent text-white font-semibold text-sm tracking-[0.14em] uppercase hover:opacity-95 transition">
+            <i data-feather="mail" class="w-4 h-4 mr-3"></i>
+            Email Enquiry
           </a>
         </div>
 
-        <p class="mt-6 text-white/55 text-sm">
-          Or call: <a class="text-white underline underline-offset-4" href="tel:+441132570861">0113 257 0861</a>
-        </p>
+        <div class="mt-10 pt-10 border-t border-white/10">
+          <p class="text-white/55 text-sm">
+            Office hours: Monday to Friday, 9am - 5pm
+          </p>
+          <p class="mt-2 text-white/55 text-sm">
+            Clifton Forge Business Park, Knottingley, West Yorkshire
+          </p>
+        </div>
       </div>
     </section>
 
@@ -534,36 +609,46 @@
               loading="lazy"
             />
             <p class="mt-4 text-white/65 text-sm leading-relaxed">
-              Flexible units for trades, workshops, storage and small businesses in Knottingley.
+              Established industrial workspace in Knottingley, West Yorkshire. Secure, practical units for automotive, storage, workshop and light industrial businesses.
             </p>
           </div>
 
           <div class="reveal">
-            <p class="text-xs tracking-[0.22em] uppercase text-white/60">Explore</p>
+            <p class="text-xs tracking-[0.22em] uppercase text-white/60">Site navigation</p>
             <ul class="mt-4 space-y-2 text-sm text-white/75">
-              <li><a class="hover:text-white transition" href="#about">About</a></li>
-              <li><a class="hover:text-white transition" href="#tenants">Our Tenants</a></li>
-              <li><a class="hover:text-white transition" href="#spaces">Spaces to Let</a></li>
-              <li><a class="hover:text-white transition" href="#location">Location</a></li>
-              <li><a class="hover:text-white transition" href="#contact">Contact</a></li>
+              <li><a class="hover:text-white transition" href="#about">About the estate</a></li>
+              <li><a class="hover:text-white transition" href="#tenants">Our tenants</a></li>
+              <li><a class="hover:text-white transition" href="#spaces">Availability</a></li>
+              <li><a class="hover:text-white transition" href="#location">Location & access</a></li>
+              <li><a class="hover:text-white transition" href="#contact">Contact us</a></li>
             </ul>
           </div>
 
           <div class="reveal">
-            <p class="text-xs tracking-[0.22em] uppercase text-white/60">Contact</p>
-            <div class="mt-4 space-y-2 text-sm text-white/75">
-              <p>Phone: <a class="hover:text-white transition" href="tel:+441132570861">0113 257 0861</a></p>
-              <p>Email: <a class="hover:text-white transition" href="mailto:enquiries@example.com">enquiries@example.com</a></p>
-              <p class="text-white/55">Knottingley, West Yorkshire</p>
+            <p class="text-xs tracking-[0.22em] uppercase text-white/60">Contact details</p>
+            <div class="mt-4 space-y-3 text-sm text-white/75">
+              <div class="flex items-start gap-3">
+                <i data-feather="phone" class="w-4 h-4 mt-0.5"></i>
+                <a class="hover:text-white transition" href="tel:+441132570861">0113 257 0861</a>
+              </div>
+              <div class="flex items-start gap-3">
+                <i data-feather="mail" class="w-4 h-4 mt-0.5"></i>
+                <a class="hover:text-white transition" href="mailto:lettings@cliftonforge.co.uk">lettings@cliftonforge.co.uk</a>
+              </div>
+              <div class="flex items-start gap-3">
+                <i data-feather="map-pin" class="w-4 h-4 mt-0.5"></i>
+                <p class="text-white/55">Clifton Forge Business Park, Knottingley, West Yorkshire</p>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="mt-10 pt-8 border-t border-white/10 text-white/55 text-sm flex flex-col sm:flex-row gap-3 justify-between reveal">
-          <p>© <span id="year"></span> Clifton Forge. All rights reserved.</p>
+          <p>© <span id="year"></span> Clifton Forge Business Park. All rights reserved.</p>
           <div class="flex gap-6">
-            <a class="hover:text-white transition" href="#">Privacy</a>
-            <a class="hover:text-white transition" href="#">Terms</a>
+            <a class="hover:text-white transition" href="#">Privacy policy</a>
+            <a class="hover:text-white transition" href="#">Terms of use</a>
+            <a class="hover:text-white transition" href="#">Accessibility</a>
           </div>
         </div>
       </div>
@@ -629,6 +714,15 @@
         heroIframe.style.opacity = "1";
       });
     }
+
+    // Form submission handling (basic)
+    document.querySelector('form')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      // In a real implementation, you would send this to a server
+      alert('Thank you for registering your interest. We will contact you when space becomes available.');
+      this.reset();
+    });
   </script>
 </body>
 </html>
