@@ -117,9 +117,31 @@
     }
 
     .form-input:focus {
-      border-color: #3b82f6;
-      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+      border-color: #a9cc52;
+      box-shadow: 0 0 0 3px rgba(169, 204, 82, 0.1);
       outline: none;
+    }
+
+    /* Header underline animation */
+    .header-nav-link {
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .header-nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 1px;
+      background-color: #a9cc52;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    .header-nav-link:hover::after {
+      width: 100%;
     }
   </style>
 
@@ -132,7 +154,7 @@
             line: "#E5E7EB",
             muted: "#6B7280",
             paper: "#F7F7F7",
-            accent: "#3B82F6",
+            accent: "#a9cc52",
             blackish: "#080808",
             darknavy: "#0E1F3B"
           }
@@ -161,11 +183,11 @@
 
         <!-- Desktop Nav -->
         <nav class="hidden lg:flex items-center gap-8 text-xs tracking-[0.18em] uppercase text-white/85">
-          <a class="hover:text-white transition" href="#about">About</a>
-          <a class="hover:text-white transition" href="#tenants">Our Tenants</a>
-          <a class="hover:text-white transition" href="#spaces">Spaces to Let</a>
-          <a class="hover:text-white transition" href="#location">Location</a>
-          <a class="hover:text-white transition" href="#contact">Contact</a>
+          <a class="header-nav-link hover:text-white transition" href="#about">About</a>
+          <a class="header-nav-link hover:text-white transition" href="#tenants">Our Tenants</a>
+          <a class="header-nav-link hover:text-white transition" href="#spaces">Spaces to Let</a>
+          <a class="header-nav-link hover:text-white transition" href="#location">Location</a>
+          <a class="header-nav-link hover:text-white transition" href="#contact">Contact</a>
         </nav>
 
         <!-- Right -->
